@@ -34,7 +34,7 @@ resnest_model_urls = {name: _url_format.format(name, short_hash(name)) for
 @RESNEST_MODELS_REGISTRY.register()
 def resnest50(pretrained=False, root='~/.encoding/models', **kwargs):
     model = ResNet(Bottleneck, [3, 4, 6, 3],
-                   radix=4, groups=1, bottleneck_width=64,
+                   radix=4, groups=32, bottleneck_width=64,
                    deep_stem=True, stem_width=32, avg_down=True,
                    avd=True, avd_first=False, **kwargs)
     if pretrained:
