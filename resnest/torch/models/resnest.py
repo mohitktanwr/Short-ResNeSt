@@ -54,6 +54,17 @@ def resnest50_8groups(pretrained=False, root='~/.encoding/models', **kwargs):
     return model
 
 @RESNEST_MODELS_REGISTRY.register()
+def resnest50_4groups(pretrained=False, root='~/.encoding/models', **kwargs):
+    model = ResNet(Bottleneck, [3, 4, 6, 3],
+                   radix=2, groups=4, bottleneck_width=64,
+                   deep_stem=True, stem_width=32, avg_down=True,
+                   avd=True, avd_first=False, **kwargs)
+    if pretrained:
+        model.load_state_dict(torch.hub.load_state_dict_from_url(
+            resnest_model_urls['resnest50'], progress=True, check_hash=True))
+    return model
+
+@RESNEST_MODELS_REGISTRY.register()
 def resnest101(pretrained=False, root='~/.encoding/models', **kwargs):
     model = ResNet(Bottleneck, [3, 4, 23, 3],
                    radix=2, groups=1, bottleneck_width=64,
