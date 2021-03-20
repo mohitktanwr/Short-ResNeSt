@@ -10,7 +10,7 @@
 import torch
 from .resnet import ResNet, Bottleneck
 
-__all__ = ['resnest50', 'resnest50_8groups', 'resnest101', 'resnest200', 'resnest269']
+__all__ = ['resnest50', 'resnest50_8groups', 'resnest50_4groups', 'resnest101', 'resnest200', 'resnest269']
 from .build import RESNEST_MODELS_REGISTRY
 
 _url_format = 'https://s3.us-west-1.wasabisys.com/resnest/torch/{}-{}.pth'
