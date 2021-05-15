@@ -244,7 +244,7 @@ class ResNet(nn.Module):
     def _make_layer(self, block, planes, blocks, stride=1, dilation=1, norm_layer=None,
                     dropblock_prob=0.0, is_first=True):
         downsample = None
-        if stride != 1 or self.inplanes != planes * block.expansion:
+        if stride != 1 or self.inplanes != planes * 1:#planes * block.expansion
             down_layers = []
             if self.avg_down:
                 if dilation == 1:
