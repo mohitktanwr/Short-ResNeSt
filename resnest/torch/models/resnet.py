@@ -223,7 +223,7 @@ class ResNet(nn.Module):
                                            dilation=2, norm_layer=norm_layer,
                                            dropblock_prob=dropblock_prob)
         else:
-            self.layer3 = self._make_layer(block, 64, layers[2], stride=2,
+            self.layer3 = self._make_layer(block, 64, layers[2], stride=2, #check
                                            norm_layer=norm_layer,
                                            dropblock_prob=dropblock_prob)
             self.layer4 = self._make_layer(block, 128, layers[3], stride=2,
