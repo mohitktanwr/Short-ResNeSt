@@ -31,6 +31,4 @@ jobs:
           pip install nose
           pip install -e .
             
-      - name: Run pytest
-        run: |
-          for f in tests/*.py; do python "$f"; done
+ 
