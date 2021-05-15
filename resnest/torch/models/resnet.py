@@ -283,7 +283,7 @@ class ResNet(nn.Module):
         else:
             raise RuntimeError("=> unknown dilation size: {}".format(dilation))
 
-        self.inplanes = planes * 4#planes * block.expansion
+        self.inplanes = planes * 1#planes * block.expansion
         for i in range(1, blocks):
             layers.append(block(self.inplanes, planes,
                                 radix=self.radix, cardinality=self.cardinality,
