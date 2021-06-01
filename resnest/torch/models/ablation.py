@@ -86,7 +86,7 @@ def resnest50_fast_2s2x40d(pretrained=False, root='~/.encoding/models', **kwargs
     return model
 
 def resnest50_fast_4s2x40d(pretrained=False, root='~/.encoding/models', **kwargs):
-    model = ResNet(Bottleneck, [3, 4, 6, 3],
+    model = ResNet(Bottleneck, [2, 3, 4, 2], #3, 4, 6, 3
                    radix=4, groups=2, bottleneck_width=40,
                    deep_stem=True, stem_width=32, avg_down=True,
                    avd=True, avd_first=True, **kwargs)
